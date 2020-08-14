@@ -1,0 +1,2 @@
+update/%:
+	maltmill -w $*.rb
