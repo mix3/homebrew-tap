@@ -1,13 +1,13 @@
 class Tenco < Formula
-  version '0.2.0'
+  version '0.3.0'
   homepage 'https://github.com/mix3/tenco'
   if OS.mac?
-    url "https://github.com/mix3/tenco/releases/download/v0.2.0/tenco-v0.2.0_darwin_amd64.zip"
-    sha256 '3e35314aed156df78e6be8facbee765b3f20f85691997057c650b7cf555d0115'
+    url "https://github.com/mix3/tenco/releases/download/v0.3.0/tenco-v0.3.0_darwin_amd64.zip"
+    sha256 '25115c31330265c41936c07199a887693e58b49c4e98a70cbf073f1e796d6825'
   end
   if OS.linux?
-    url "https://github.com/mix3/tenco/releases/download/v0.2.0/tenco-v0.2.0_linux_amd64.zip"
-    sha256 'afe62e68eedebd08eacba81457993c7a313b493075c89fc3c35651b149fc645e'
+    url "https://github.com/mix3/tenco/releases/download/v0.3.0/tenco-v0.3.0_linux_amd64.zip"
+    sha256 '65896bf329e19a03468dd80144d4c9e278f18e1411ca993d36ce1f3914dcbed3'
   end
   head 'https://github.com/mix3/tenco.git'
 
