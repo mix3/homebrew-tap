@@ -6,5 +6,5 @@ cask 'font-s2g-love' do
   name 'S2Gらぶ'
   homepage 'http://s2g.jp/'
 
-  font 'love.ttf'
+  font 'love/love.ttf'
 end
