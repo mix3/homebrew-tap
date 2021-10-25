@@ -1,25 +1,27 @@
 class DockerMachineDriverHyperkit < Formula
-  version 'v1.0.0'
-  homepage 'https://github.com/mix3/docker-machine-driver-hyperkit'
-  url "https://github.com/mix3/docker-machine-driver-hyperkit.git"
-  head 'https://github.com/mix3/docker-machine-driver-hyperkit.git'
+  version 'v1.23.2'
+  homepage 'https://github.com/kubernetes/minikube'
+  if OS.mac?
+    url "https://github.com/kubernetes/minikube/releases/download/v1.23.2/docker-machine-driver-hyperkit"
+    sha256 'c3beabc1b201b2519e0ac22770b7bdb648329db20815c5aef195f17724060937'
+  end
+  head 'https://github.com/kubernetes/minikube.git'
 
-  depends_on "go" => :build
   depends_on "mix3/tap/docker-machine"
   depends_on "linuxkit/linuxkit/hyperkit"
 
+  head do
+    depends_on 'go' => :build
+  end
+
   def install
-    ENV["GOPATH"] = buildpath
-    ENV["GO111MODULE"] = "auto"
-
-    dir = buildpath/"src/github.com/mix3/docker-machine-driver-hyperkit"
-    dir.install buildpath.children
-
-    cd dir do
-      system "go", "build", "-o", "#{bin}/docker-machine-driver-hyperkit",
-             "-ldflags", "-X main.version=#{version}"
-      prefix.install_metafiles
+    if build.head?
+      system 'make', 'out/docker-machine-driver-hyperkit'
+    else
+      mkdir "out"
+      system 'mv', 'docker-machine-driver-hyperkit', 'out/docker-machine-driver-hyperkit'
     end
+    bin.install 'out/docker-machine-driver-hyperkit'
   end
 
   def caveats
