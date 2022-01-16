@@ -1,8 +1,8 @@
 class Activemonitor < Formula
-  version '0.1.0'
+  version '0.2.0'
   homepage 'https://github.com/mix3/activemonitor'
-  url "https://github.com/mix3/activemonitor/releases/download/v0.1.0/activemonitor"
-  sha256 '10bca4afc3fd3d61b726096b7bd5b8eb5178b63b78f75c40a14da8eba1ce3e62'
+  url "https://github.com/mix3/activemonitor/releases/download/v0.2.0/activemonitor"
+  sha256 'd332757d80fcf071d74c7d22c6ca4b96036c2fec40e38ef5af0b19889ac333ed'
   head 'https://github.com/mix3/activemonitor.git'
 
   plist_options manual: "activemonitor"
